@@ -1,5 +1,7 @@
 package crew;
 
+import airport.Airport;
+
 public class Navigator {
     private String name;
     private int tiredness = 0;
@@ -22,5 +24,10 @@ public class Navigator {
 
     public String navigating(String action) {
         return action;
+    }
+
+    public Airport setDestination(String destination) {
+        System.out.println("Destination: " + destination);
+        return new Airport(destination);
     }
 }

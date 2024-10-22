@@ -31,22 +31,24 @@ public class Administration {
             int city = scanner.nextInt();
             String flightName = createNewFlightName();
             if (city == 1) {
-                prepareFlightMoscow(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+                prepareFlightMoscow(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator, "Moscow");
             } else if (city == 2) {
-                prepareFlightWarsaw(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+                prepareFlightWarsaw(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator, "Warsaw");
             } else if (city == 3) {
-                prepareFlightKazan(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+                prepareFlightKazan(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator, "Kazan");
             } else if (city == 4) {
-                prepareFlightMinsk(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+                prepareFlightMinsk(flightName, flightAttendant, navigator, pilot1, pilot2, radioOperator, "Minsk");
             }
+            System.out.println("Next flight? please press 1, 2, 3 or 4.");
         }
     }
 
-    public static void prepareFlightMoscow(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2, RadioOperator radioOperator) {
+    public static void prepareFlightMoscow(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2,
+                                           RadioOperator radioOperator, String destination) {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(60);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName, destination);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {
@@ -60,11 +62,12 @@ public class Administration {
         }
     }
 
-    public static void prepareFlightWarsaw(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2, RadioOperator radioOperator) {
+    public static void prepareFlightWarsaw(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2,
+                                           RadioOperator radioOperator, String destination) {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(100);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName, destination);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {
@@ -78,11 +81,12 @@ public class Administration {
         }
     }
 
-    public static void prepareFlightKazan(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2, RadioOperator radioOperator) {
+    public static void prepareFlightKazan(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2,
+                                          RadioOperator radioOperator, String destination) {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(45);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName, destination);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {
@@ -96,11 +100,12 @@ public class Administration {
         }
     }
 
-    public static void prepareFlightMinsk(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2, RadioOperator radioOperator) {
+    public static void prepareFlightMinsk(String flightName, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2,
+                                          RadioOperator radioOperator, String destination) {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(80);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName, destination);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {

@@ -1,5 +1,7 @@
 package crew;
 
+import airport.Airport;
+
 public class RadioOperator {
     private String name;
     private int tiredness = 0;
@@ -22,5 +24,9 @@ public class RadioOperator {
 
     public String operating(String action){
         return action;
+    }
+
+    public String checkWeatherInDestination(Airport airport){
+        return airport.sendWeather();
     }
 }
