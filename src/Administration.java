@@ -18,7 +18,8 @@ public class Administration {
                 "2. Warsaw; \n" +
                 "3. Kazan; \n" +
                 "4. Minsk. \n" +
-                "To proceed, please enter the number of the city. To exit please enter 9.");
+                "To proceed, please enter the number of the city. Next, you can proceed with others flights. \n" +
+                "Be careful, the crew can be tired.");
 
         FlightAttendant flightAttendant = new FlightAttendant(generateCrewName());
         Navigator navigator = new Navigator(generateCrewName());
@@ -45,7 +46,7 @@ public class Administration {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(60);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {
@@ -63,7 +64,7 @@ public class Administration {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(100);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {
@@ -81,7 +82,7 @@ public class Administration {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(45);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {
@@ -99,7 +100,7 @@ public class Administration {
         Plane plane = new Plane("b747", flightName);
         plane.setFuel(80);
 
-        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator);
+        Flight flight = new Flight(plane, flightAttendant, navigator, pilot1, pilot2, radioOperator, flightName);
 
         if (checkCrew(flightAttendant, navigator, pilot1, pilot2, radioOperator)) {
             try {

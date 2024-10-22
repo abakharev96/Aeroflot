@@ -13,17 +13,22 @@ public class Flight {
     private Pilot pilot1;
     private Pilot pilot2;
     private RadioOperator radioOperator;
+    private String flightName;
 
-    public Flight(Plane plane, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2, RadioOperator radioOperator) {
+    public Flight(Plane plane, FlightAttendant flightAttendant, Navigator navigator, Pilot pilot1, Pilot pilot2, RadioOperator radioOperator, String flightName) {
         this.plane = plane;
         this.flightAttendant = flightAttendant;
         this.navigator = navigator;
         this.pilot1 = pilot1;
         this.pilot2 = pilot2;
         this.radioOperator = radioOperator;
+        this.flightName = flightName;
     }
 
     public void makeFlight() throws InterruptedException {
+        System.out.println("Flight " + flightName + " is started.");
+        Thread.sleep(1500);
+
         System.out.println(radioOperator.operating(radioOperator.getName() + ", radio operator: Im operating"));
         radioOperator.setTiredness(radioOperator.getTiredness() + 15);
         Thread.sleep(1500);
